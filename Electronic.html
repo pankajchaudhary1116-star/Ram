@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dharmendra Electronic</title>
+<style>
+body{
+  font-family:Arial;
+  margin:0;
+  background:url('https://images.unsplash.com/photo-1498049794561-7780e7231661') no-repeat center/cover fixed;
+  color:#fff;
+  text-align:center;
+}
+header{background:rgba(0,0,0,0.7);padding:20px;}
+section{padding:20px;background:rgba(0,0,0,0.6);margin:10px;border-radius:10px;}
+.products,.services{display:flex;flex-wrap:wrap;justify-content:center;}
+.card{background:#333;margin:10px;padding:10px;width:180px;border-radius:8px;transition:0.3s;}
+.card:hover{transform:scale(1.05);}
+.card img{width:100%;height:120px;object-fit:cover;border-radius:8px;}
+button{padding:8px 12px;border:none;background:#22c55e;color:#fff;border-radius:5px;cursor:pointer;}
+footer{background:rgba(0,0,0,0.8);padding:10px;}
+.whatsapp{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25D366;
+  color:#fff;
+  padding:12px 15px;
+  border-radius:50px;
+  text-decoration:none;
+  font-weight:bold;
+}
+</style>
+</head>
+<body>
+
+<header>
+<h1>Dharmendra Electronic</h1>
+<p>Barari, Mathura | Trusted Electronic Shop</p>
+</header>
+
+<!-- SERVICES -->
+<section>
+<h2>Our Services</h2>
+<div class="services">
+<div class="card">
+<img src="https://images.unsplash.com/photo-1581091215367-59ab6b2e9f2d">
+<h3>LED Bulb Sales</h3>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952">
+<h3>Cooler & AC</h3>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1593784991095-a205069470b6">
+<h3>TV & Appliances</h3>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1606813907291-d86efa9b94db">
+<h3>Fan & Electrical</h3>
+</div>
+</div>
+</section>
+
+<!-- PRODUCTS -->
+<section>
+<h2>Our Products</h2>
+<div class="products">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1565814329452-e1efa11c5b89">
+<h3>LED Bulb</h3>
+<p>₹200</p>
+<button onclick="order('LED Bulb')">Buy</button>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1626806787461-102c1bfaaea1">
+<h3>Cooler</h3>
+<p>₹5,000</p>
+<button onclick="order('Cooler')">Buy</button>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1581579188871-45ea61f2a1c8">
+<h3>AC</h3>
+<p>₹25,000</p>
+<button onclick="order('AC')">Buy</button>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1593784991095-a205069470b6">
+<h3>LED TV</h3>
+<p>₹15,000</p>
+<button onclick="order('LED TV')">Buy</button>
+</div>
+
+</div>
+</section>
+
+<!-- ABOUT -->
+<section>
+<h2>Why Choose Us?</h2>
+<p>✔ Best Price Guarantee</p>
+<p>✔ Genuine Products</p>
+<p>✔ Fast Delivery</p>
+<p>✔ Trusted Local Shop in Barari</p>
+</section>
+
+<!-- BOOKING -->
+<section style="max-width:500px;margin:auto;">
+<h2 style="font-size:28px;">Book Service</h2>
+<p>Fill the form below to book your service. Our team will contact you quickly.</p>
+
+<input type="text" id="bname" placeholder="Your Name" style="width:90%;padding:12px;font-size:16px;"><br>
+<input type="text" id="bservice" placeholder="Service (AC, TV, Cooler etc)" style="width:90%;padding:12px;font-size:16px;"><br>
+<input type="date" id="bdate" style="width:90%;padding:12px;font-size:16px;"><br>
+
+<button onclick="bookService()" style="padding:12px 20px;font-size:18px;margin-top:10px;">Book Now</button>
+
+<p style="margin-top:15px;font-size:14px;">✔ Fast response on WhatsApp<br>✔ Trusted local service<br>✔ Affordable pricing</p>
+</section>
+
+<!-- CONTACT -->
+<section>
+<h2>Contact</h2>
+<p>📞 8077739479</p>
+<p>📍 Barari, Mathura</p>
+</section>
+
+<a class="whatsapp" href="https://wa.me/918077739479" target="_blank">WhatsApp</a>
+
+<footer>
+<p>Dharmendra Electronic | All Rights Reserved</p>
+</footer>
+
+<script>
+function order(item){
+ let phone="918077739479";
+ let text=`I want to buy ${item}`;
+ let url=`https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
+ window.open(url);
+}
+
+
+// BOOKING SYSTEM
+function bookService(){
+ let name=document.getElementById('bname').value;
+ let service=document.getElementById('bservice').value;
+ let date=document.getElementById('bdate').value;
+ let phone="918077739479";
+ let text=`Booking Request:%0AName: ${name}%0AService: ${service}%0ADate: ${date}`;
+ let url=`https://wa.me/${phone}?text=${text}`;
+ window.open(url);
+}
+</script>
+
+</body>
+</html>
